@@ -1,6 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import TestBox from './TestBox';
+import VariantsExam from './exams/VariantsExam';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -58,7 +58,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <TestBox />
+      <VariantsExam />
     </div>
   );
 };
