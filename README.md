@@ -6,3 +6,5 @@
 
 ---
 
+### 📆 Day 1 학습 내용 (2024.12.05 목요일)
+- **[`framer-motion` 개요](/reports/framer-motion.md)**
