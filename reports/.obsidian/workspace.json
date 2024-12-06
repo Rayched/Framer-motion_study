@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9f2bec5bbaa0ee21",
+        "id": "2a8dd0969c475d2d",
         "type": "tabs",
         "children": [
           {
-            "id": "4a757bc2a6f5f0f5",
+            "id": "4c29920f66de62ca",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Variants.md",
+                "file": "Gestures.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Variants"
+              "title": "Gestures"
             }
           }
         ]
@@ -163,12 +163,15 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "4a757bc2a6f5f0f5",
+  "active": "4c29920f66de62ca",
   "lastOpenFiles": [
+    "refImgs/gestures_exam.gif",
+    "refImgs/Gesture_exam_sample.png",
+    "framer-motion_basic.md",
+    "Variants.md",
+    "Gestures.md",
     "refImgs/Variants_sample.png",
     "refImgs",
-    "새 폴더",
-    "framer-motion_basic.md",
-    "Variants.md"
+    "새 폴더"
   ]
 }

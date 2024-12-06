@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
 import VariantsExam from './exams/VariantsExam';
+import Gestures from './exams/Gestures';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -58,7 +59,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <VariantsExam />
+      <Gestures />
     </div>
   );
 };
