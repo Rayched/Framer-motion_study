@@ -34,7 +34,7 @@ function Gestures(){
 };
 ```
 
-<img src="refImgs/Gesture_exam_sample.png"/>
+<img src="refImgs/Gestures/Gesture_exam_sample.png"/>
 
 - 이제 이 예제를 활용해서 다양한 제스처 효과들을 구현해볼 것이다.
 
@@ -175,7 +175,7 @@ function Gestures(){
 };
 ```
 
-<img src="refImgs/gestures_exam.gif" />
+<img src="refImgs/Gestures/gestures_exam.gif" />
 
 - 위와 같이 `BoxVariants` 만들고, `Animation` 설정들을 옮겨줬다.
 - 설정을 `variants object` 옮기기만 했기 때문에 예제 실행 결과는 변함 없다.
@@ -184,9 +184,6 @@ function Gestures(){
 
 ### `Gestures, Part 2`
 
-<img src="refImgs/drag_exam_sample.gif"/>
-
-- 위의 이미지는 `Drag` 예제이다.
 - `drag`, `Animation effect` 설정은 다음과 같다.
 
 ``` tsx
@@ -243,7 +240,7 @@ function Gestures(){
 };
 ```
 
-<img src="refImgs/drag_exam_sample_v2.gif"/>
+<img src="refImgs/Drag/drag_exam1_after.gif"/>
 
 - 위의 이미지처럼 전과 달리 드래그 가능한 영역에 제한이 생긴 것을 확인할 수 있다.
 
@@ -251,7 +248,7 @@ function Gestures(){
 
 - 이번엔 새로운 예제를 준비해봤다.
 
-<img src="refImgs/drag_exam2_before.png"/>
+<img src="refImgs/Drag/drag_exam2_before.png"/>
 
 ``` tsx
 const Wrapper = styled.div``;
@@ -341,7 +338,7 @@ function Gestures(){
 - `Box` 밖으로 넘어가는 것은 `overflow: hidden` 속성을 통해서 <br/>
 	보이지 않게 설정하였다.
 
-<img src="refImgs/drag_exam2_after.gif"/>
+<img src="refImgs/Drag/drag_exam2_after.gif"/>
 
 ---
 
@@ -369,5 +366,5 @@ function Gestures(){
 //둘 중 어느 걸로 해도 적용이 된다.
 ```
 
-<img src="refImgs/drag_exam2_a2.gif"/>
+<img src="refImgs/Drag/drag_exam2_a2.gif"/>
 

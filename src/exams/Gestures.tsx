@@ -1,5 +1,5 @@
 //Gestures 예제
-
+/*
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import styled from "styled-components";
@@ -67,3 +67,51 @@ function Gestures(){
 };
 
 export default Gestures;
+*/
+
+import { motion } from "framer-motion";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100vw;
+	height: 100vh;
+`;
+
+const Box = styled(motion.div)`
+	width: 150px;
+	height: 150px;
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+`;
+
+const BoxVariants = {
+	drag: {
+		scale: 0.5,
+		borderRadius: "100px",
+		border: "2px solid black",
+		backgroundColor: "rgb(41, 128, 185)",
+		transition: { duration: 2 }
+	}
+}
+
+export function Gestures(){
+	return (
+		<Wrapper>
+			<Box 
+                variants={BoxVariants}
+                drag
+                whileDrag="drag"
+                dragConstraints={{
+                    top: -50,
+                    bottom: 50,
+                    left: 50,
+                    right: -50
+                }}
+            />
+		</Wrapper>
+	);
+};

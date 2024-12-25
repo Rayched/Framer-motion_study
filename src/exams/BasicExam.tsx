@@ -13,14 +13,19 @@ const Wrapper = styled.div`
 `;
 
 const Box = styled(motion.div)`
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     background-color: white;
     border-radius: 15px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
-function TestBox(){
+export const BasicExams = {
+    Wrapper: Wrapper,
+    Box: Box
+}
+
+function BasicExam(){
     return (
         <Wrapper>
             <Box 
@@ -32,4 +37,4 @@ function TestBox(){
     );
 };
 
-export default TestBox;
+export default BasicExam;

@@ -65,7 +65,7 @@ function App(){
 - `<Box />` Components 내부에 총 4개의 `<Circle />` 추가하였다.
 - 물론 이 과정에서 `<Box />`의 CSS 설정도 좀 건드렸다.
 
-<img src="refImgs/Variants_sample.png"/>
+<img src="refImgs/Variants/Variants_sample.png"/>
 
 ``` tsx
 const Box = styled(motion.div)`
