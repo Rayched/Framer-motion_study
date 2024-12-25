@@ -67,6 +67,10 @@ function MyComponents(){
 - 이때 설정 가능한 `event`는 다음과 같다.
 - `change`, `animationStart``animationComplete`, `animationCancel`
 	- `change`는 `MotionValue`의 최신 값 (`latest value`)을 제공해준다.
+
+- **[공식 문서 / useMotionValueEvent](https://motion.dev/docs/react-use-motion-value-event)**
+
+
 ---
 
 #### `MotionValue`, 예제
