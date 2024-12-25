@@ -1,9 +1,7 @@
 
 ### MotionValues, Part 1
 
-- **📆 2024.12.25 수요일**
-- **[공식 문서 / `MotionValue`](https://motion.dev/docs/react-motion-value)**
-
+- **📆 학습 일: 2024.12.25 수요일**
 ---
 
 #### `MotionValue`
@@ -60,7 +58,15 @@ function MyComponents(){
 }
 ```
 
+- `useMotionValueEvent()` 함수는 React Component의 수명 주기동안 <br/>
+	`Motion Value`의 `event handler`를 관리하는 함수
 
+- `useMotionValueEvent()`는 아래 세 개의 인자를 전달 받는다. <br/>
+	(`MotionValue, eventName, callback`)
+
+- 이때 설정 가능한 `event`는 다음과 같다.
+- `change`, `animationStart``animationComplete`, `animationCancel`
+	- `change`는 `MotionValue`의 최신 값 (`latest value`)을 제공해준다.
 ---
 
 #### `MotionValue`, 예제
@@ -224,5 +230,12 @@ function MotionValues(){
 ```
 ---
 
+### MotionValues, Part 2
+
+- **📆 학습 일: 2024.12.25 ~ 26**
+
+---
+
+#### `useTransform()`
 
 
