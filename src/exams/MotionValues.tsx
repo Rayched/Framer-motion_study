@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {motion, useMotionValue, useMotionValueEvent} from "framer-motion";
+import {motion, useMotionValue, useMotionValueEvent, useTransform} from "framer-motion";
 import { BasicExams } from "./BasicExam";
 
 const MotionWrapper = styled(BasicExams.Wrapper)`
@@ -16,6 +16,7 @@ const MotionBox = styled(BasicExams.Box)``;
 
 function MotionValues(){
     const x = useMotionValue(0);
+    const scales = useTransform(x, [-300, 0, 300], [0.5, 1, 2]);
     console.log(x);
 
     /*
@@ -29,10 +30,30 @@ function MotionValues(){
     */
 
     useMotionValueEvent(
-        x, 
+        scales, 
         "change", 
-        (latest) => console.log(`x = ${latest}`)
+        (latest) => console.log(`scales: ${latest}`)
     );
+    useMotionValueEvent(x, "change", (latest) => console.log(`x : ${latest}`));
+
+    return (
+        <MotionWrapper>
+            <MotionBox 
+                drag="x"
+                dragSnapToOrigin
+                style={{x, scale: scales}}
+            />
+        </MotionWrapper>
+    );
+};
+
+/**
+ * 버튼 Logic
+ * <div>
+        <button onClick={MoveLeft}>◀</button>
+        <button onClick={MoveRight}>▶</button>
+    </div>
+    <button onClick={() => x.set(0)}>Reset</button>
 
     const MoveRight = () => {
         const oldX = x.get();
@@ -47,21 +68,5 @@ function MotionValues(){
 
         return newX;
     }
-
-    return (
-        <MotionWrapper>
-            <MotionBox 
-                drag="x"
-                dragSnapToOrigin
-                style={{x}}
-            />
-            <div>
-                <button onClick={MoveLeft}>◀</button>
-                <button onClick={MoveRight}>▶</button>
-            </div>
-            <button onClick={() => x.set(0)}>Reset</button>
-        </MotionWrapper>
-    );
-};
-
+ */
 export default MotionValues;
