@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "da8ba087d7bdddef",
+        "id": "4a47dad4e2196f46",
         "type": "tabs",
         "children": [
           {
-            "id": "bdcae0a61f79d5e3",
+            "id": "f8e4293d9e8e4fd0",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -163,12 +163,15 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "bdcae0a61f79d5e3",
+  "active": "f8e4293d9e8e4fd0",
   "lastOpenFiles": [
+    "Gestures.md",
+    "MotionValues.md",
+    "refImgs/MotionValues/useTransform_exam2.gif",
+    "refImgs/MotionValues/useTransform_exam2.gif.crdownload",
     "refImgs/MotionValues/useTransform_exam1.gif",
     "refImgs/MotionValues/useTransform_exam1.gif.crdownload",
     "refImgs/MotionValues/MotionValues_method_exam.gif",
-    "MotionValues.md",
     "refImgs/MotionValues/MotionValues_method_exam.gif.crdownload",
     "refImgs/Drag/drag_exam1_after.gif",
     "refImgs/Drag/drag_exam1_after.gif.crdownload",
@@ -179,16 +182,12 @@
     "refImgs/Gestures/Gesture_exam_sample.png",
     "refImgs/Drag/drag_exam2_before.png",
     "refImgs/Drag/drag_exam2_after.gif",
-    "refImgs/Drag/drag_exam2_a2.gif",
-    "refImgs/Drag/drag_exam_sample.gif",
     "refImgs/Drag",
     "refImgs/Gestures",
     "refImgs/MotionValues",
     "refImgs/MotionValues_event.gif.crdownload",
-    "Gestures.md",
     "refImgs/MotionValues_exam1.gif.crdownload",
     "무제 파일.md",
-    "refImgs/drag_exam2_a2.gif.crdownload",
     "framer-motion_basic.md",
     "Variants.md"
   ]

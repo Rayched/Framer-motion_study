@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {motion, useMotionValue, useMotionValueEvent, useTransform} from "framer-motion";
+import {motion, useMotionValue, useScroll, useTransform} from "framer-motion";
 import { BasicExams } from "./BasicExam";
 
 const MotionWrapper = styled(motion.div)`
@@ -13,74 +13,37 @@ const MotionWrapper = styled(motion.div)`
         margin: 5px 0px;
     }
 `;
-const MotionBox = styled(BasicExams.Box)``;
+
+const MotionBox = styled(BasicExams.Box)`
+    border: 2px solid white;
+`;
 
 function MotionValues(){
+    const y = useMotionValue(0);
     const x = useMotionValue(0);
-    const rotateZ = useTransform(x, [-400, 400], [-360, 360]);
-    const background = useTransform(
-        x, 
-        [-400, 0, 400], 
-        [
-            /**
-             * left, center, right
-             */
-            "linear-gradient(135deg, rgb(179, 237, 247), rgb(183, 235, 244))",
-            "linear-gradient(135deg, rgb(135, 228, 245), rgb(107, 209, 227))",
-            "linear-gradient(135deg, rgb(61, 90, 209), rgb(8, 62, 171))"
-        ])
+    const {scrollYProgress} = useScroll();
 
-    /*
-    useEffect(() => {x.onChange(() => console.log(x.get()))}, [x]);
-     * 강의에서 사용했던 Box의 위치값을 console에 띄우는 방법
-     * 다만 현 시점에선 사용할 수 없는 방법이다.
-     *
-     * useMotionValueEvent() Hook으로 대체 가능하기에
-     * 아래와 같이 코드를 작성해서
-     * Box의 x축 값을 추적, console에 출력까지 할 수 있다.
-    */
+    const bgColor = useTransform(x, [-400, 0, 400], [
+            "linear-gradient(135deg, rgb(255, 255, 255), rgb(134, 205, 218))",
+            "linear-gradient(135deg, rgb(176, 233, 243), rgb(43, 195, 222))",
+            "linear-gradient(135deg, rgb(174, 188, 244), rgb(8, 62, 171))"
+    ]);
 
-    useMotionValueEvent(
-        rotateZ, 
-        "change", 
-        (latest) => console.log(`scales: ${latest}`)
-    );
+    const BoxColors = useTransform(y, [-200, 0, 200], [
+        "rgba(255, 255, 255, 0.1)",
+        "rgba(255, 255, 255, 0.5)",
+        "rgba(255, 255, 255, 1.0)"
+    ]);
 
-    /**
-     * MotionWrapper의 background 속성 값으로
-     * useTransform의 return value 전달
-     */
     return (
-        <MotionWrapper style={{background}}>
+        <MotionWrapper style={{background: bgColor}}>
             <MotionBox 
                 drag="x"
                 dragSnapToOrigin
-                style={{x}}
+                style={{x, y, backgroundColor: BoxColors}}
             />
         </MotionWrapper>
     );
 };
 
-/**
- * 버튼 Logic
- * <div>
-        <button onClick={MoveLeft}>◀</button>
-        <button onClick={MoveRight}>▶</button>
-    </div>
-    <button onClick={() => x.set(0)}>Reset</button>
-
-    const MoveRight = () => {
-        const oldX = x.get();
-        const newX = x.set(oldX+50);
-
-        return newX;
-    };
-
-    const MoveLeft = () => {
-        const oldX = x.get();
-        const newX = x.set(oldX-50);
-
-        return newX;
-    }
- */
 export default MotionValues;

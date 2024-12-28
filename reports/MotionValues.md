@@ -361,4 +361,39 @@ function MotionValues(){
 #### 예제
 
 - 이번에는 `Box`를 드래그한 위치에 따라 배경색이 달라지게 해보자.
-- 
+- 단순히 숫자 값 말고도, 색상 값, 문자열 값도 출력 범위로 지정할 수 있다.
+- 이를 위해서 `Wrapper`를 `motion component`로 수정하고 <br/>
+	아래와 같이 `Box`의 위치에 대응하는 배경색 `motion value`를 만들었다.
+
+``` tsx
+const Wrapper = styled(motion.div)``;
+const Box = styled.div``;
+
+function MotionValues(){
+	const x = useMotionValue(0);
+
+	const bgColors = useTransform(x, [-360, 0, 360], [
+		"linear-gradient(135deg, rgb(255, 255, 255), rgb(134, 205, 218))",
+		"linear-gradient(135deg, rgb(176, 233, 243), rgb(43, 195, 222))",
+		"linear-gradient(135deg, rgb(174, 188, 244), rgb(8, 62, 171))"
+	]);
+	
+	return (
+		<Wrapper style={{background: bgColors}}>
+			<Box 
+				drag="x"
+				dragSnapToOrigin
+				style={{x}}
+			/>
+		</Wrapper>
+	);
+}
+```
+
+- 그리고 이를 `Wrapper`의 `style={{background}}` 속성 값으로 전달하였다.
+- 이제 예제를 실행해보면 `Box`의 위치에 따라 배경 색상이 바뀌는 것을 확인할 수 있다.
+
+<img src="refImgs/useTransform_exam2.gif"/>
+
+---
+
