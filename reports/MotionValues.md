@@ -353,3 +353,12 @@ function MotionValues(){
 
 ---
 
+### Motion Values, part 3
+
+#### `useViewportScroll()`
+
+---
+#### 예제
+
+- 이번에는 `Box`를 드래그한 위치에 따라 배경색이 달라지게 해보자.
+- 

@@ -36,7 +36,6 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     line-height: 1;
-    background: linear-gradient(135deg, #87e4f5, #6bd1e3);
   }
   ol, ul {
     list-style: none;

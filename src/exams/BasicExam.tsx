@@ -10,6 +10,7 @@ const Wrapper = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
+    background: linear-gradient(135deg, #87e4f5, #6bd1e3);
 `;
 
 const Box = styled(motion.div)`

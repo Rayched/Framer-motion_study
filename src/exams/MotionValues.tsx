@@ -2,11 +2,12 @@ import styled from "styled-components";
 import {motion, useMotionValue, useMotionValueEvent, useTransform} from "framer-motion";
 import { BasicExams } from "./BasicExam";
 
-const MotionWrapper = styled(BasicExams.Wrapper)`
+const MotionWrapper = styled(motion.div)`
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
 
     button {
         margin: 5px 0px;
@@ -16,8 +17,18 @@ const MotionBox = styled(BasicExams.Box)``;
 
 function MotionValues(){
     const x = useMotionValue(0);
-    const scales = useTransform(x, [-300, 0, 300], [0.5, 1, 2]);
-    console.log(x);
+    const rotateZ = useTransform(x, [-400, 400], [-360, 360]);
+    const background = useTransform(
+        x, 
+        [-400, 0, 400], 
+        [
+            /**
+             * left, center, right
+             */
+            "linear-gradient(135deg, rgb(179, 237, 247), rgb(183, 235, 244))",
+            "linear-gradient(135deg, rgb(135, 228, 245), rgb(107, 209, 227))",
+            "linear-gradient(135deg, rgb(61, 90, 209), rgb(8, 62, 171))"
+        ])
 
     /*
     useEffect(() => {x.onChange(() => console.log(x.get()))}, [x]);
@@ -30,18 +41,21 @@ function MotionValues(){
     */
 
     useMotionValueEvent(
-        scales, 
+        rotateZ, 
         "change", 
         (latest) => console.log(`scales: ${latest}`)
     );
-    useMotionValueEvent(x, "change", (latest) => console.log(`x : ${latest}`));
 
+    /**
+     * MotionWrapper의 background 속성 값으로
+     * useTransform의 return value 전달
+     */
     return (
-        <MotionWrapper>
+        <MotionWrapper style={{background}}>
             <MotionBox 
                 drag="x"
                 dragSnapToOrigin
-                style={{x, scale: scales}}
+                style={{x}}
             />
         </MotionWrapper>
     );
