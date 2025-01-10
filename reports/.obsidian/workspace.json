@@ -165,15 +165,17 @@
   },
   "active": "39066b11ccfddfb3",
   "lastOpenFiles": [
-    "refImgs/LogoAnimation/LogoAnimation.gif",
-    "refImgs/LogoAnimation/LogoAnimation.gif.crdownload",
+    "().md",
+    "SVG_Animation.md",
+    "refImgs/LogoAnimation/LogoAnimation_b.png",
+    "refImgs/LogoAnimation/LogoAnimation_a.gif",
     "refImgs/LogoAnimation/ReactLogo.png",
+    "refImgs/LogoAnimation/LogoAnimation.gif.crdownload",
     "refImgs/LogoAnimation",
     "refImgs/새 폴더",
     "MotionValues.md",
     "Gestures.md",
     "Variants.md",
-    "SVG_Animation.md",
     "refImgs/Variants/Variants_exam.gif",
     "refImgs/Variants/Variants_exam.gif.crdownload",
     "framer-motion_basic.md",
@@ -188,8 +190,6 @@
     "refImgs/MotionValues/MotionValues_method_exam.gif.crdownload",
     "refImgs/Drag/drag_exam1_after.gif",
     "refImgs/Drag/drag_exam1_after.gif.crdownload",
-    "refImgs/Drag/drag_exam_sample2.gif",
-    "refImgs/Variants/Variants_sample.png",
-    "refImgs/Gestures/gestures_exam.gif"
+    "refImgs/Drag/drag_exam_sample2.gif"
   ]
 }
