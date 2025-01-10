@@ -10,14 +10,14 @@ const Wrapper = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, #87e4f5, #6bd1e3);
+    background: linear-gradient(135deg, rgb(174, 188, 244), rgb(8, 62, 171));
 `;
 
 const Box = styled(motion.div)`
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     background-color: white;
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
@@ -26,16 +26,29 @@ export const BasicExams = {
     Box: Box
 }
 
+const BoxVariants = {
+    start: { scale: 0 },
+    end: {
+        scale: 1.5,
+        rotateZ: 360,
+        transition: {
+            type: "spring",
+            delay: 2,
+            duration: 1
+        }
+    }
+};
+
 function BasicExam(){
-    return (
-        <Wrapper>
-            <Box 
-                initial={{ scale: 0}} 
-                animate={{ scale: 1, rotateZ: 360}}
-                transition={{type: "spring", delay: 1, duration: 2}}
-            />
-        </Wrapper>
-    );
+   return (
+    <Wrapper>
+        <Box 
+            variants={BoxVariants}
+            initial="start"
+            animate={BoxVariants.end}
+        />
+    </Wrapper>
+   );
 };
 
 export default BasicExam;

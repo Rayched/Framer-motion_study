@@ -255,3 +255,9 @@ function VariantsSample(){
 	);
 };
 ```
+
+- 최종 결과물은 아래와 같다.
+
+<img src="refImgs/Variants/Variants_exam.gif"/>
+
+

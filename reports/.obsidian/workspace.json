@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "4a47dad4e2196f46",
+        "id": "f885c9eb3eb29467",
         "type": "tabs",
         "children": [
           {
-            "id": "f8e4293d9e8e4fd0",
+            "id": "39066b11ccfddfb3",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "MotionValues.md",
+                "file": "SVG_Animation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "MotionValues"
+              "title": "SVG_Animation"
             }
           }
         ]
@@ -157,16 +157,29 @@
     "hiddenItems": {
       "switcher:퀵 스위처 열기": false,
       "graph:그래프 뷰 열기": false,
+      "command-palette:명령어 팔레트 열기": false,
       "canvas:새 캔버스 만들기": false,
       "daily-notes:오늘의 데일리 노트 열기": false,
-      "templates:템플릿 삽입": false,
-      "command-palette:명령어 팔레트 열기": false
+      "templates:템플릿 삽입": false
     }
   },
-  "active": "f8e4293d9e8e4fd0",
+  "active": "39066b11ccfddfb3",
   "lastOpenFiles": [
-    "Gestures.md",
+    "refImgs/LogoAnimation/LogoAnimation.gif",
+    "refImgs/LogoAnimation/LogoAnimation.gif.crdownload",
+    "refImgs/LogoAnimation/ReactLogo.png",
+    "refImgs/LogoAnimation",
+    "refImgs/새 폴더",
     "MotionValues.md",
+    "Gestures.md",
+    "Variants.md",
+    "SVG_Animation.md",
+    "refImgs/Variants/Variants_exam.gif",
+    "refImgs/Variants/Variants_exam.gif.crdownload",
+    "framer-motion_basic.md",
+    "refImgs/basic/animation_sample.gif",
+    "refImgs/basic/animation_sample.gif.crdownload",
+    "refImgs/basic",
     "refImgs/MotionValues/useTransform_exam2.gif",
     "refImgs/MotionValues/useTransform_exam2.gif.crdownload",
     "refImgs/MotionValues/useTransform_exam1.gif",
@@ -177,18 +190,6 @@
     "refImgs/Drag/drag_exam1_after.gif.crdownload",
     "refImgs/Drag/drag_exam_sample2.gif",
     "refImgs/Variants/Variants_sample.png",
-    "refImgs/Variants",
-    "refImgs/Gestures/gestures_exam.gif",
-    "refImgs/Gestures/Gesture_exam_sample.png",
-    "refImgs/Drag/drag_exam2_before.png",
-    "refImgs/Drag/drag_exam2_after.gif",
-    "refImgs/Drag",
-    "refImgs/Gestures",
-    "refImgs/MotionValues",
-    "refImgs/MotionValues_event.gif.crdownload",
-    "refImgs/MotionValues_exam1.gif.crdownload",
-    "무제 파일.md",
-    "framer-motion_basic.md",
-    "Variants.md"
+    "refImgs/Gestures/gestures_exam.gif"
   ]
 }

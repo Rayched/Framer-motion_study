@@ -14,9 +14,7 @@ const MotionWrapper = styled(motion.div)`
     }
 `;
 
-const MotionBox = styled(BasicExams.Box)`
-    border: 2px solid white;
-`;
+const MotionBox = styled(BasicExams.Box)``;
 
 function MotionValues(){
     const y = useMotionValue(0);
@@ -38,7 +36,7 @@ function MotionValues(){
     return (
         <MotionWrapper style={{background: bgColor}}>
             <MotionBox 
-                drag="x"
+                drag="y"
                 dragSnapToOrigin
                 style={{x, y, backgroundColor: BoxColors}}
             />

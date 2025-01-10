@@ -1,7 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import MotionValues from './exams/MotionValues';
-import { Gestures } from './exams/Gestures';
+import SVGExam from './exams/SVGExam';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -58,7 +57,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <MotionValues />
+      <SVGExam />
     </div>
   );
 };

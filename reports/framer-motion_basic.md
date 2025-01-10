@@ -54,6 +54,34 @@ function App(){
 
 ### `motion props`
 
+#### `props: animate`
+
+- `framer-motion`의 모든 Animation 효과는 
+- `motion component`의 `animate` 속성을 통해  제어된다.
+
+- 별로 복잡하지 않은 간단한 `Animation` 효과 같은 경우는
+- `animate` props에 작성해서 사용할 수 있다.
+
+``` tsx
+import {motion} from "framer-motion";
+import {styled} from "styled-components";
+
+const Wrapper = styled.div``;
+const Box = styled(motion.div)``; 
+
+function App(){
+	return (
+		<Wrapper>
+			<Box 
+				animate={{rotateZ: 360}}
+			/>
+		</Wrapper>
+	);
+}
+```
+
+
+---
 #### `props: initial`
 
 - `Animation` 효과가 시작하는 방식을 명시하는 `<motion />`의 `props`

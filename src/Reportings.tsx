@@ -1,7 +1,7 @@
-//Animation Sample
-//Variants Example
+//Framer Motion 정리글 용 예제
 
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
+import { start } from "repl";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -16,7 +16,7 @@ const Wrapper = styled.div`
 const Box = styled(motion.div)`
     width: 200px;
     height: 200px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(220, 220, 220, 0.7);
     border-radius: 15px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
     display: grid;
@@ -24,9 +24,9 @@ const Box = styled(motion.div)`
 `;
 
 const Circle = styled(motion.div)`
-    background-color: white;
-    width: 70px;
-    height: 70px;
+    background-color: rgb(250, 250, 250);
+    width: 72px;
+    height: 72px;
     border-radius: 35px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
     place-self: center;
@@ -34,37 +34,35 @@ const Circle = styled(motion.div)`
 
 const BoxVariants = {
     start: {
-        opacity: 0,
-        scale: 0.5
+        scale: 0
     },
     end: {
-        opacity: 1,
         scale: 1,
         transition: {
             type: "spring",
-            delay: 1,
-            duration: 0.5,
+            delay: 0.8,
+            duration: 0.2,
             bounce: 0.5,
             delayChildren: 1.2,
-            staggerChildren: 0.3
+            staggerChildren: 0.4
         }
     }
 };
 
 const CircleVariants = {
     start: {
-        scale: 0,
+        scale: 0
     },
     end: {
         scale: 1,
         transition: {
             type: "spring",
-            duration: 0.1,
+            duration: 0.2
         }
     }
 };
 
-function VariantsExam(){
+function Reportings(){
     return (
         <Wrapper>
             <Box variants={BoxVariants} initial="start" animate="end">
@@ -75,6 +73,6 @@ function VariantsExam(){
             </Box>
         </Wrapper>
     );
-};
+}
 
-export default VariantsExam;
+export default Reportings;
