@@ -1,7 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import SVGExam from './exams/SVGExam';
-import BasicExam from './exams/BasicExam';
+import PresenceExam from './exams/AnimatePresence';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -58,7 +57,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <SVGExam />
+      <PresenceExam />
     </div>
   );
 };

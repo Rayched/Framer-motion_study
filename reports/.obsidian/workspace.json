@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "SVG_Animation.md",
+                "file": "AnimatePresence.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SVG_Animation"
+              "title": "AnimatePresence"
             }
           }
         ]
@@ -165,15 +165,22 @@
   },
   "active": "39066b11ccfddfb3",
   "lastOpenFiles": [
+    "refImgs/AnimatePresence/Exam_After.gif",
+    "refImgs/AnimatePresence/Exam_After.gif.crdownload",
+    "refImgs/AnimatePresence/ExamSample.gif",
+    "AnimatePresence.md",
+    "refImgs/AnimatePresence/ExamSample.gif.crdownload",
+    "refImgs/AnimatePresence/PresenceExam.gif",
+    "refImgs/AnimatePresence/PresenceExam.gif.crdownload",
+    "refImgs/AnimatePresence",
+    "SVG_Animation.md",
     "refImgs/LogoAnimation/Logo_a2.gif",
     "refImgs/LogoAnimation/Logo_a2.gif.crdownload",
     "refImgs/LogoAnimation/multipleTransition.gif",
     "refImgs/LogoAnimation/multipleTransition.gif.crdownload",
     "refImgs/LogoAnimation/LogoSample.gif",
-    "SVG_Animation.md",
     "refImgs/LogoAnimation/Logo_a1.gif",
     "refImgs/LogoAnimation/Logos_a1.gif.crdownload",
-    "().md",
     "refImgs/LogoAnimation/Logo_b.png",
     "refImgs/LogoAnimation/ReactLogo.png",
     "refImgs/LogoAnimation/LogoAnimation.gif.crdownload",
@@ -183,14 +190,7 @@
     "Gestures.md",
     "Variants.md",
     "refImgs/Variants/Variants_exam.gif",
-    "refImgs/Variants/Variants_exam.gif.crdownload",
     "framer-motion_basic.md",
-    "refImgs/basic/animation_sample.gif",
-    "refImgs/basic/animation_sample.gif.crdownload",
-    "refImgs/basic",
-    "refImgs/MotionValues/useTransform_exam2.gif",
-    "refImgs/MotionValues/useTransform_exam2.gif.crdownload",
-    "refImgs/MotionValues/useTransform_exam1.gif",
-    "refImgs/MotionValues/MotionValues_method_exam.gif"
+    "refImgs/basic/animation_sample.gif"
   ]
 }
