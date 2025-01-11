@@ -2,7 +2,7 @@
 //학습용 TestBox Component
 
 import styled from "styled-components";
-import {motion} from "framer-motion";
+import {delay, motion} from "framer-motion";
 
 const Wrapper = styled.div`
     display: flex;
@@ -30,11 +30,17 @@ const BoxVariants = {
     start: { scale: 0 },
     end: {
         scale: 1.5,
-        rotateZ: 360,
+        rotateZ: 270,
         transition: {
-            type: "spring",
-            delay: 2,
-            duration: 1
+            default: {
+                type: "spring",
+                delay: 2,
+                duration: 1
+            },
+            rotateZ: {
+                delay: 3,
+                duration: 1.5
+            }
         }
     }
 };
@@ -43,9 +49,22 @@ function BasicExam(){
    return (
     <Wrapper>
         <Box 
-            variants={BoxVariants}
-            initial="start"
-            animate={BoxVariants.end}
+            initial={{ scale: 1 }}
+            animate={{
+                scale: 2,
+                rotateZ: 270
+            }}
+            transition={{
+                default: {
+                    type: "spring",
+                    delay: 2,
+                    duration: 0.5
+                },
+                rotateZ: {
+                    delay: 3,
+                    duration: 1
+                }
+            }}
         />
     </Wrapper>
    );
