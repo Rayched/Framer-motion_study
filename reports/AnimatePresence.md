@@ -196,3 +196,9 @@ function PresenceExam(){
 
 ### AnimatePresence, Part 2
 
+📔 `#8.12 Slider Part One, #8.13 Slider Part Two`
+
+<img src="refImgs/Slider/ExamSample.png"/>
+
+
+

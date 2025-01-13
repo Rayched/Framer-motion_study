@@ -165,6 +165,11 @@
   },
   "active": "39066b11ccfddfb3",
   "lastOpenFiles": [
+    "refImgs/Slider/Slider_ver1.gif",
+    "refImgs/Slider/Slider_ver1.gif.crdownload",
+    "refImgs/Slider/ExamSample.png",
+    "refImgs/Slider",
+    "refImgs/새 폴더",
     "refImgs/AnimatePresence/Exam_After.gif",
     "refImgs/AnimatePresence/Exam_After.gif.crdownload",
     "refImgs/AnimatePresence/ExamSample.gif",
@@ -183,14 +188,9 @@
     "refImgs/LogoAnimation/Logos_a1.gif.crdownload",
     "refImgs/LogoAnimation/Logo_b.png",
     "refImgs/LogoAnimation/ReactLogo.png",
-    "refImgs/LogoAnimation/LogoAnimation.gif.crdownload",
-    "refImgs/LogoAnimation",
-    "refImgs/새 폴더",
     "MotionValues.md",
     "Gestures.md",
     "Variants.md",
-    "refImgs/Variants/Variants_exam.gif",
-    "framer-motion_basic.md",
-    "refImgs/basic/animation_sample.gif"
+    "framer-motion_basic.md"
   ]
 }
