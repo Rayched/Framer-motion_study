@@ -29,15 +29,28 @@ const Box = styled(motion.div)`
     position: absolute;
 `;
 
+const SliderBtns = styled.div`
+    width: 160px;
+    height: 40px;
+    position: absolute;
+    top: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 0px;
+    border-radius: 7px;
+    padding: 3px;
+    background-color: rgb(43, 97, 207);
+`;
+
 const Btns = styled.button`
     width: 70px;
     height: 30px;
     font-size: 16px;
     border: 0px;
     border-radius: 7px;
-    position: absolute;
-    top: 450px;
     background-color: rgb(174, 188, 244);
+    margin: 0px 3px;
 `;
 
 const BoxVariants = {
@@ -70,6 +83,10 @@ function PresenceExam(){
         setIndex((value) => value === 9 ? 9 : value + 1);
     };
 
+    const prevIndex = () => {
+        setIndex((value) => value === 0 ? 0 : value - 1);
+    }
+
     return (
         <Wrapper>
             <AnimatePresence>
@@ -82,8 +99,10 @@ function PresenceExam(){
                         ): null
                     )
                 }
-                <Btns>◀</Btns>
-                <Btns onClick={nextIndex}>▶</Btns>
+                <SliderBtns>
+                    <Btns onClick={prevIndex}>◀</Btns>
+                    <Btns onClick={nextIndex}>▶</Btns>
+                </SliderBtns>
             </AnimatePresence>
         </Wrapper>
     );
