@@ -200,5 +200,6 @@ function PresenceExam(){
 
 <img src="refImgs/Slider/ExamSample.png"/>
 
-
+- `<motion />`에는 `custom`이라는 `props`가 존재한다.
+- 해당 `props`는 
 

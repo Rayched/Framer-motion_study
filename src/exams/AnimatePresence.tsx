@@ -54,10 +54,13 @@ const Btns = styled.button`
 `;
 
 const BoxVariants = {
-    initial: {
-        x: 100,
-        opacity: 0,
-    },
+    initial: (isBack: boolean) => ({
+        //isBack, 이전 버튼 클릭 여부에 따라
+        //x의 값이 -100/100으로 바뀌어야 함.
+        x: isBack ? -100: 100,
+        opacity: 0
+    }),
+
     showing: {
         x: 0,
         opacity: 1,
@@ -66,39 +69,45 @@ const BoxVariants = {
             duration: 0.5
         }
     },
-    exits: {
-        x: -200,
+    exits: (isBack: boolean) => ({
+        //isBack, 이전 버튼 클릭 여부에 따라
+        //x의 값이 -200/200으로 바뀌어야 함.
+        x: isBack ? 200 :-200,
         opacity: 0,
         transition: {
             duration: 0.7
         }
-    }
+    })
 };
 
 function PresenceExam(){
     const [Index, setIndex] = useState(0);
-    const Sliders = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    const [isBack, setBack] = useState(false);
+    //[◀] prevBtn(이전 버튼) Click 여부 Check
 
     const nextIndex = () => {
+        setBack(false);
         setIndex((value) => value === 9 ? 9 : value + 1);
     };
 
     const prevIndex = () => {
+        setBack(true);
         setIndex((value) => value === 0 ? 0 : value - 1);
     }
 
     return (
         <Wrapper>
-            <AnimatePresence>
-                {
-                    Sliders.map((num) => 
-                        Index === num ? (
-                            <Box key={num}variants={BoxVariants} initial="initial" animate="showing" exit="exits">
-                                {num}
-                            </Box>
-                        ): null
-                    )
-                }
+            <AnimatePresence custom={isBack}>
+                <Box 
+                    key={Index}
+                    variants={BoxVariants} 
+                    custom={isBack}
+                    initial="initial" 
+                    animate="showing" 
+                    exit="exits"
+                >
+                    {Index}
+                </Box>
                 <SliderBtns>
                     <Btns onClick={prevIndex}>◀</Btns>
                     <Btns onClick={nextIndex}>▶</Btns>
