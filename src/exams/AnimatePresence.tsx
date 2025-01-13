@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { BasicExams } from "./BasicExam";
 import { AnimatePresence, delay, motion } from "framer-motion";
 import { useState } from "react";
 

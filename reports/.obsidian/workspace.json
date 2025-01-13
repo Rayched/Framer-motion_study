@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "f885c9eb3eb29467",
+        "id": "4b82c7905b4303e4",
         "type": "tabs",
         "children": [
           {
-            "id": "39066b11ccfddfb3",
+            "id": "4455d9b6ad05bb47",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AnimatePresence.md",
+                "file": "Slider.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AnimatePresence"
+              "title": "Slider"
             }
           }
         ]
@@ -163,19 +163,24 @@
       "templates:템플릿 삽입": false
     }
   },
-  "active": "39066b11ccfddfb3",
+  "active": "4455d9b6ad05bb47",
   "lastOpenFiles": [
+    "refImgs/Slider/ExamSample.png",
+    "Slider.md",
+    "Gestures.md",
+    "AnimatePresence.md",
+    "framer-motion_basic.md",
+    "refImgs/Slider/Slider_prevBtn_ver2.gif",
+    "refImgs/Slider/Slider_prevBtn_ver2.gif.crdownload",
     "refImgs/Slider/Silder_prevBtn_ver1.gif",
     "refImgs/Slider/Silder_ver2_prevBtn.gif.crdownload",
     "refImgs/Slider/Slider_exam.gif",
     "refImgs/Slider/Slider_ver1.gif.crdownload",
-    "refImgs/Slider/ExamSample.png",
     "refImgs/Slider",
     "refImgs/새 폴더",
     "refImgs/AnimatePresence/Exam_After.gif",
     "refImgs/AnimatePresence/Exam_After.gif.crdownload",
     "refImgs/AnimatePresence/ExamSample.gif",
-    "AnimatePresence.md",
     "refImgs/AnimatePresence/ExamSample.gif.crdownload",
     "refImgs/AnimatePresence/PresenceExam.gif",
     "refImgs/AnimatePresence/PresenceExam.gif.crdownload",
@@ -184,13 +189,8 @@
     "refImgs/LogoAnimation/Logo_a2.gif",
     "refImgs/LogoAnimation/Logo_a2.gif.crdownload",
     "refImgs/LogoAnimation/multipleTransition.gif",
-    "refImgs/LogoAnimation/multipleTransition.gif.crdownload",
     "refImgs/LogoAnimation/LogoSample.gif",
-    "refImgs/LogoAnimation/Logo_a1.gif",
-    "refImgs/LogoAnimation/Logo_b.png",
     "MotionValues.md",
-    "Gestures.md",
-    "Variants.md",
-    "framer-motion_basic.md"
+    "Variants.md"
   ]
 }

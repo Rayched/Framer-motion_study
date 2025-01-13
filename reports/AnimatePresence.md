@@ -192,18 +192,4 @@ function PresenceExam(){
 
 <img src="refImgs/AnimatePresence/Exam_After.gif"/>
 
----
-
-### AnimatePresence, Part 2
-
-📔 `#8.12 Slider Part One, #8.13 Slider Part Two`
-
-<img src="refImgs/Slider/ExamSample.png"/>
-
-- `<motion />`에는 `custom`이라는 `props`가 존재한다.
-- 해당 `props` 통해 `Variants`에 `JavaScript value` 전달 가능
-
-- `exitBeforeEnter (현재 지원 X)`
-
-
 
