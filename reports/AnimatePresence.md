@@ -201,5 +201,9 @@ function PresenceExam(){
 <img src="refImgs/Slider/ExamSample.png"/>
 
 - `<motion />`에는 `custom`이라는 `props`가 존재한다.
-- 해당 `props`는 
+- 해당 `props` 통해 `Variants`에 `JavaScript value` 전달 가능
+
+- `exitBeforeEnter (현재 지원 X)`
+
+
 

@@ -65,8 +65,7 @@ const BoxVariants = {
         x: 0,
         opacity: 1,
         transition: {
-            delay: 0.6,
-            duration: 0.5
+            duration: 0.6
         }
     },
     exits: (isBack: boolean) => ({
@@ -75,7 +74,7 @@ const BoxVariants = {
         x: isBack ? 200 :-200,
         opacity: 0,
         transition: {
-            duration: 0.7
+            duration: 0.5
         }
     })
 };
@@ -87,17 +86,17 @@ function PresenceExam(){
 
     const nextIndex = () => {
         setBack(false);
-        setIndex((value) => value === 9 ? 9 : value + 1);
+        setIndex((value) => value === 9 ? 0 : value + 1);
     };
 
     const prevIndex = () => {
         setBack(true);
-        setIndex((value) => value === 0 ? 0 : value - 1);
+        setIndex((value) => value === 0 ? 9 : value - 1);
     }
 
     return (
         <Wrapper>
-            <AnimatePresence custom={isBack}>
+            <AnimatePresence mode="wait" custom={isBack}>
                 <Box 
                     key={Index}
                     variants={BoxVariants} 
@@ -108,11 +107,11 @@ function PresenceExam(){
                 >
                     {Index}
                 </Box>
-                <SliderBtns>
-                    <Btns onClick={prevIndex}>◀</Btns>
-                    <Btns onClick={nextIndex}>▶</Btns>
-                </SliderBtns>
             </AnimatePresence>
+            <SliderBtns>
+                <Btns onClick={prevIndex}>◀</Btns>
+                <Btns onClick={nextIndex}>▶</Btns>
+            </SliderBtns>
         </Wrapper>
     );
 };
