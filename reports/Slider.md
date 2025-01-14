@@ -41,7 +41,7 @@ const Box = styled(motion.div)`
 	align-items: center;
 	font-weight: bold;
 	width: 250px;
-	height: 150px;
+	height: 250px;
 	background-color: white;
 	border-radius: 20px;
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
@@ -53,7 +53,7 @@ const SliderBtns = styled.div`
 	width: 160px;
 	height: 40px;
 	position: absolute;
-	top: 450px;
+	top: 500px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -98,9 +98,15 @@ export function SliderExam(){
 }
 ```
 
-- 위의 예제에서 `Tabs`의 개수를 배열을 통해 정해놨지만
-- 추후에 `state`로 바꿀 생각이다.
-- 설명 편의를 위해서 임시로 설정해놨다.
+- 위의 예제에서 `state(Index)`의 값을 바꾸면
+- 그에 맞게 `<Box />`의 번호도 바뀐다.
+
+- 이제 버튼을 누르면, `<Box />`가 자동으로 다음 번호로 넘어가고
+- `<Box />`가 넘어가는 애니메이션 효과까지 추가해보겠다.
+
+---
+
+
 
 
 
