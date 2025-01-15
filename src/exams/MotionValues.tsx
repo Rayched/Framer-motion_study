@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {motion, useMotionValue, useScroll, useTransform} from "framer-motion";
-import { BasicExams } from "./BasicExam";
 
 const MotionWrapper = styled(motion.div)`
     display: flex;
@@ -14,7 +13,12 @@ const MotionWrapper = styled(motion.div)`
     }
 `;
 
-const MotionBox = styled(BasicExams.Box)``;
+const MotionBox = styled(motion.div)`
+    width: 180px;
+    height: 180px;
+    border-radius: 20px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+`;
 
 function MotionValues(){
     const y = useMotionValue(0);
@@ -36,7 +40,7 @@ function MotionValues(){
     return (
         <MotionWrapper style={{background: bgColor}}>
             <MotionBox 
-                drag="y"
+                drag
                 dragSnapToOrigin
                 style={{x, y, backgroundColor: BoxColors}}
             />
