@@ -34,9 +34,13 @@ function Layout(){
     const isClicked = () => setClicked((prev) => !prev);
 
     return (
-        <Wrapper>
-            <Box>
-                <Circle />
+        <Wrapper onClick={isClicked}>
+            <Box 
+                style={{
+                    justifyContent: Clicked ? "center" : "flex-start",
+                    alignItems: Clicked ? "center" : "flex-start"
+            }}>
+                <Circle layout />
             </Box>
         </Wrapper>
     );
