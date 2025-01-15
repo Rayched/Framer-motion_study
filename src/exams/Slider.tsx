@@ -14,7 +14,7 @@ const Wrapper = styled.div`
     );
 `;
 
-const Box = styled(motion.div)`
+const Tab = styled(motion.div)`
     display: flex;
 	justify-content: center;
 	align-items: center;
@@ -55,11 +55,11 @@ const Btn = styled.button`
     }
 `;
 
-const BoxVariants = {
-    initial: {
+const TabVariants = {
+    initial: (isNext: boolean) => ({
         opacity: 0,
-        x: 100
-    },
+        x: (isNext ? 100 : -100)
+    }),
     changeTabs: {
         opacity: 1,
         x: 0,
@@ -68,38 +68,40 @@ const BoxVariants = {
             duration: 0.6
         }
     },
-    exitTabs: {
+    exitTabs: (isNext: boolean) => ({
         opacity: 0,
-        x: -100,
+        x: (isNext ? -100 : 100),
         transition: {
             duration: 0.5
         }
-    }
+    })
 };
 
 function Slider(){
-    const [Index, setIndex] = useState(1);
+    const [Index, setIndex] = useState(0);
+    const [isNext, setNext] = useState(false);
 
-    const nextTabs = () => {
+    const nextTabs = async () => {
+        await setNext(true);
         setIndex((values) => values === 9 ? 0 : values + 1);
     }
 
-    const prevTabs = () => {
+    const prevTabs = async () => {
+        await setNext(false);
         setIndex((values) => values === 0 ? 9 : values - 1);
     }
 
     return (
         <Wrapper>
             <AnimatePresence>
-                <Box 
+                <Tab
                     key={Index}
-                    variants={BoxVariants}
+                    variants={TabVariants}
                     initial="initial"
                     animate="changeTabs"
                     exit="exitTabs"
-                >
-                    {Index}
-                </Box>
+                    custom={isNext}
+                >{Index}</Tab>
             </AnimatePresence>
             <BtnContainer>
                 <Btn onClick={prevTabs}>◀</Btn>

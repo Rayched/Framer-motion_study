@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "4b82c7905b4303e4",
+        "id": "ab3b88fa3bb46a2a",
         "type": "tabs",
         "children": [
           {
-            "id": "4455d9b6ad05bb47",
+            "id": "473360d29979e362",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -163,19 +163,24 @@
       "templates:템플릿 삽입": false
     }
   },
-  "active": "4455d9b6ad05bb47",
+  "active": "473360d29979e362",
   "lastOpenFiles": [
-    "refImgs/Slider/ExamSample.png",
+    "refImgs/Slider/Slider_ver3.gif",
     "Slider.md",
+    "refImgs/Slider/Slider_ver3.gif.crdownload",
+    "refImgs/Slider/Slider_ver2.gif",
+    "refImgs/Slider/Slider_ver2.gif.crdownload",
+    "refImgs/Slider/Slider_ver1.gif",
+    "refImgs/Slider/Slider_ver1.gif.crdownload",
+    "refImgs/Slider/ExamSample.png",
+    "refImgs/Slider/Slider_exam.gif",
+    "refImgs/Slider/Silder_prevBtn_ver1.gif",
     "Gestures.md",
     "AnimatePresence.md",
     "framer-motion_basic.md",
     "refImgs/Slider/Slider_prevBtn_ver2.gif",
     "refImgs/Slider/Slider_prevBtn_ver2.gif.crdownload",
-    "refImgs/Slider/Silder_prevBtn_ver1.gif",
     "refImgs/Slider/Silder_ver2_prevBtn.gif.crdownload",
-    "refImgs/Slider/Slider_exam.gif",
-    "refImgs/Slider/Slider_ver1.gif.crdownload",
     "refImgs/Slider",
     "refImgs/새 폴더",
     "refImgs/AnimatePresence/Exam_After.gif",
@@ -184,12 +189,7 @@
     "refImgs/AnimatePresence/ExamSample.gif.crdownload",
     "refImgs/AnimatePresence/PresenceExam.gif",
     "refImgs/AnimatePresence/PresenceExam.gif.crdownload",
-    "refImgs/AnimatePresence",
     "SVG_Animation.md",
-    "refImgs/LogoAnimation/Logo_a2.gif",
-    "refImgs/LogoAnimation/Logo_a2.gif.crdownload",
-    "refImgs/LogoAnimation/multipleTransition.gif",
-    "refImgs/LogoAnimation/LogoSample.gif",
     "MotionValues.md",
     "Variants.md"
   ]
