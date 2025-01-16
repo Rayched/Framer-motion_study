@@ -52,28 +52,40 @@ const Circle = styled(motion.div)`
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
 `;
 
-function Layout(){
-    const [Clicked, setClicked] = useState(false);
+function FinalExam(){
+    const [BoxID, setBoxID] = useState<null|number>(null);
 
-    const isClicked = () => setClicked((prev) => !prev);
+    const BoxClick = (id: number|null) => {
+        setBoxID(id);
+    };
+
+    console.log(BoxID);
 
     return (
-        <Wrapper onClick={isClicked}>
+        <Wrapper>
             <Grid>
-                <Box layoutId="SampleBox"/>
-                <Box />
-                <Box />
-                <Box />
+                {
+                    [1, 2, 3, 4].map((num) => {
+                        return (
+                            <Box key={num} layoutId={String(num)} onClick={() => BoxClick(num)}/>
+                        );
+                    })
+                }
             </Grid>
             <AnimatePresence>
                 {
-                    Clicked ? 
+                    BoxID ? 
                     <Overlay 
+                        onClick={() => BoxClick(null)}
                         initial={{backgroundColor: "rgba(0, 0, 0, 0)"}} 
-                        animate={{backgroundColor: "rgba(0, 0, 0, 0.1)"}} 
+                        animate={{backgroundColor: "rgba(0, 0, 0, 0.3)"}} 
                         exit={{backgroundColor: "rgba(0, 0, 0, 0)"}}
                     >
-                        <Box layoutId="SampleBox" style={{width: 300, height: 200}}/>
+                        <Box 
+                            layoutId={String(BoxID)} 
+                            style={{width: 300, height: 200}}
+                            transition={{duration: 0.3}}
+                        />
                     </Overlay> 
                     : null
                 }
@@ -82,4 +94,4 @@ function Layout(){
     );
 }
 
-export default Layout;
+export default FinalExam;
