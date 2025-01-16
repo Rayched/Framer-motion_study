@@ -12,17 +12,20 @@ const Wrapper = styled.div`
 `;
 
 const Box = styled(motion.div)`
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: white;
     border-radius: 20px;
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+    margin: 5px;
 `;
 
 const Circle = styled(motion.div)`
-    width: 75px;
-    height: 75px;
+    width: 45px;
+    height: 45px;
     border-radius: 40px;
     background-color: rgb(8, 62, 171);
     box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
@@ -35,12 +38,11 @@ function Layout(){
 
     return (
         <Wrapper onClick={isClicked}>
-            <Box 
-                style={{
-                    justifyContent: Clicked ? "center" : "flex-start",
-                    alignItems: Clicked ? "center" : "flex-start"
-            }}>
-                <Circle layout />
+            <Box>
+                {!Clicked ? <Circle layoutId="circle"/> : null}
+            </Box>
+            <Box>
+                {Clicked ? <Circle layoutId="circle"/> : null}
             </Box>
         </Wrapper>
     );
