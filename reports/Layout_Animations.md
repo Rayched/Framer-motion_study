@@ -204,3 +204,255 @@ function Layout(){
 	애니메이션 효과가 자동으로 추가된 것을 확인할 수 있다.
 
 ---
+### Final Project
+
+#### 예제 설명
+
+<img src="refImgs/Layout/Final/FinalProject_sample.png"/>
+
+- `framer-motion` 라이브러리 학습 과정, 마지막 예제
+- 강의에서 사용됐던 예제와 이전 파트 (`Layout`) 마지막 예제 <br/>
+	총 두 가지를 섞어 놓은 버전이다.
+	
+- 위의 사진에서 파란색 공이 있는 `Box`를 `2, 3` <br/>
+	공이 없는 `Box`를 `1, 4`번으로 칭하겠다.
+
+- `1, 4번 Box`는 클릭하면 해당 박스가 정중앙에 확대된 형태로 나오고 <br/>
+	`2, 3번 Box`에는 확대 기능은 없고, 화면 클릭 시 내부의 파란색 공을 주고 받는 <br/>
+	형태의 애니메이션 효과를 만들어 볼 것이다.
+
+- 기본적인 소스코드는 다음과 같다.
+
+``` tsx
+//Final Project Sample Code
+import {motion} from "framer-motion";
+import styled from "styled-components";
+
+const Wrapper = styled.div`
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(125deg, rgb(174, 188, 244), rgb(8, 62, 171));
+`;
+
+const GridContainer = styled.div`
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	div:nth-child(2){
+		grid-column: span 2;
+	};
+	
+	div:nth-child(3){
+		grid-column: span 2;
+	};
+	
+	width: 50vw;
+	gap: 10px;
+`;
+
+const Box = styled(motion.div)`
+	height: 200px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.06);
+`;
+
+const Circle = styled(motion.div)`
+	width: 50px;
+	height: 50px;
+	background-color: rgb(40, 90, 188);
+	border-radius: 30px;
+`;
+
+function FinalExam(){
+	return (
+		<Wrapper>
+			<GridContainer>
+				<Box key="box1"/>
+				<Box key="box2">
+					<Circle />
+				</Box>
+				<Box key="box3">
+					<Circle />
+				</Box>
+				<Box key="box4"/>
+			</GridContainer>
+		</Wrapper>
+	);
+}
+```
+
+---
+
+#### `Box 2, 3`, `Circle` 이동 구현하기
+
+- 제일 먼저 `Box 2, 3`에 있는 `Circle`의 이동 기능을 구현해보겠다.
+- 구현 과정은 이전, `Layout, 예제2` 에서 더 자세하게 설명했으니 <br/>
+	간략하게 보여주기만 하고 넘어가도록 하겠다.
+
+```
+구현 과정
+- 화면 클릭 여부를 기억해둘 boolean 값을 가지는 state를 만들고
+- 'Wrapper'의 onClick Event Listener 통해서 이를 관리한다.
+- 그리고 해당 state의 값에 따라 2, 3번 Box의 <Circle /> 랜더링 여부를 결정
+  state == false => 2번 Box, <Circle /> Render, 아니면 null return
+  state == true => 3번 Box, <Circle /> Render, 아니면 null return
+  
+- 마지막으로 2개의 <Circle />에 동일한 layoutId 설정
+  <Circle />이 Render, delete되는 과정에서의 animation 효과 추가한다.
+```
+
+``` tsx
+//화면 클릭 시, Circle이 2, 3번 박스를 왔다갔다하는 기능 구현
+function FinalExam(){
+	const [Move, setMove] = useState(false);
+	const isCircleMove = () => setMove((prev) => !prev);
+	
+	return (
+		<Wrapper onClick={isCircleMove}>
+			<GridContainer>
+				<Box key="box1"/>
+				<Box key="box2">
+					{!Move ? <Circle layoutId="circle"/> : null}
+				</Box>
+				<Box key="box3">
+					{Move ? <Circle layoutId="circle"/> : null}
+				</Box>
+				<Box key="box4"/>
+			</GridContainer>
+		</Wrapper>
+	);
+};
+```
+
+<img src="refImgs/Layout/Final/exam_build1.gif"/>
+
+---
+#### `Box 1, 4` 확대 기능 구현하기 1
+
+- 제일 먼저 `Box 1, 4` 클릭하면 나오는 화면부터 구현하기로 했다.
+- 기본적인 Style 설정은 다음과 같이 하였다.
+
+``` tsx
+const OverlayViews = styled.div`
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.2);
+	position: absolute;
+`;
+```
+
+- `position: absolute`로 설정하지 않으면, 아래 사진과 같이 <br/>
+	전체 요소 흐름에 따라 배치가 되기 때문에 `absolute` 설정해서 <br/>
+	요소 흐름의 영향을 받지 않게 해줘야 한다.
+
+<img src="refImgs/Layout/Final/non-absolute.png"/>
+
+---
+
+- `Box 1, 4`의 클릭 여부를 관측하는 `boolean 'state'` 하나 만들고 <br/>
+	두 `<Box />` Component의 `onClick={}` 통해서 해당 `state` 값을 관리한다.
+
+- 그 다음, 해당 `state`의 값이 `true`일 때만 `<OverlayViews />`를 Render <br/>
+	`false`인 경우에는 Render하지 않도록 설정한다. (삼항 연산자)
+
+``` tsx
+const OverlayViews = styled.div`...`
+
+function FinalExam(){
+	const [Move, setMove] = useState(false);
+	const isCircleMove = () => setMove((prev) => !prev);
+	
+	const [BoxId, setBoxId] = useState(false);
+	const isBoxClicked = () => setBoxId((prev) => !prev);
+	
+	return (
+		<Wrapper>
+			<GridContainer>
+				<Box key="box1" onClick={isBoxClicked}/>
+				<Box key="box2" onClick={isCircleMove}>
+					{!Move ? <Circle layoutId="circle"/> : null}
+				</Box>
+				<Box key="box3" onClick={isCircleMove}>
+					{Move ? <Circle layoutId="circle"/> : null}
+				</Box>
+				<Box key="box4" onClick={isBoxClicked}/>
+			</GridContainer>
+			{
+				BoxId ? (
+					<OverlayViews>
+						<Box 
+							onClick={isBoxClicked} 
+							style={{width: 400, height: 250}}
+						/>
+					</OverlayViews>
+				) : null
+			}
+		</Wrapper>
+	);
+};
+```
+
+<img src="refImgs/Layout/Final/exam_build2-1.gif"/>
+
+- 최종적인 결과물은 위와 같이 된다.
+- 추가적으로 이전 예제에서 수정한 점이 하나 있는데 <br/>
+	기존에 `Wrapper`에 추가했던 `Circle`의 Render 여부를 결정하던 <br/>
+	`onClick event Listener`를 `Box 2, 3`으로 이관시킨 점이다.
+
+- `Circle`과 연관이 없는 `Box 1, 4` 클릭했을 때, `Circle`의 위치에 영향이 가는 건 <br/>
+	조금 아닌 것 같은 느낌이 들어서 `onClick Event Listener`를 `Box 2, 3`으로 옮겼다.
+
+- 이제 `OverlayViews` 내부의 `<Box />`와 `Box 1, 4`번에 `layoutId` 추가해보자.
+
+``` tsx
+function FinalExam(){
+	/*기존 코드*/
+	return (
+		<Wrapper>
+			<GridContainer>
+				<Box key="box1" layoutId="OverlayBox" onClick={isBoxClicked}/>
+				<Box key="box2" onClick={isCircleMove}>
+					{!Move ? <Circle layoutId="circle"/> : null}
+				</Box>
+				<Box key="box3" onClick={isCircleMove}>
+					{Move ? <Circle layoutId="circle"/> : null}
+				</Box>
+				<Box key="box4" layoutId="OverlayBox" onClick={isBoxClicked}/>
+			</GridContainer>
+			{
+				BoxId ? (
+					<OverlayViews>
+						<Box 
+							layoutId="OverlayBox"
+							onClick={isBoxClicked} 
+							style={{width: 400, height: 250}}
+						/>
+					</OverlayViews>
+				) : null
+			}
+		</Wrapper>
+	);
+};
+```
+
+<img src="refImgs/Layout/Final/exam_build2_layoutId_update.gif"/>
+
+- 예제를 실행해보면 `Box 1, 4` `<OverlayView />` 내부의 `<Box />` 요소 간 <br/>
+	애니메이션 효과가 적용된 것을 확인할 수 있다.
+
+- 다만 그 이후에 `Box 1`이 화면 상 사라진 것을 확인할 수 있다.
+- 개발자 Console로 확인해보니, `Box 1`이 삭제된 것은 아니고 <br/>
+	 `Box 1, 4`가 겹쳐진 것을 확인할 수 있었다.
+
+- 아마 `Box 1, 4`가 동일한 `layoutId` 가졌기 때문에 발생한 문제 같다.
+
+---

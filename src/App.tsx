@@ -1,7 +1,6 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import FinalExam from './exams/FinalExam';
-import LayoutExam from './exams/LayoutExam';
+import HiddenExam from './exams/HiddenExam';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -58,7 +57,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <LayoutExam />
+      <HiddenExam />
     </div>
   );
 };
