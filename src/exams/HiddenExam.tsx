@@ -64,6 +64,27 @@ function HiddenExam(){
         setClicked(id);
     };
 
+    //요소의 id 값을 받아와서
+    //그걸 state에 저장, 이를 <OverlayViews/> 내부의
+    //<Box />가 layoutId로 참조하는 형태
+
+    /**
+     * Case 1
+     * onClick()이 Box 요소의 id 값을 받아오고
+     * 이를 state에 저장하고
+     * state에 저장한 값을 <OverlayViews> 내부의
+     * Box가 layoutId로 참조하는 형태
+     * 
+     * Case 2
+     * 별도의 onClick event listener 없이
+     * setState() 통해서 id 값을 바로 저장시키는 형태
+     * 
+     * 결과적으론 크게 다를 것은 없어보임
+     * 도출하는 과정이 Case 1은 우회하는 식
+     * Case 2는 우회없이 다이렉트로 가는 식
+     * 어느 쪽이 더 좋을지 고민해볼 필요도 있을 것 같다.
+     */
+
     return (
         <Wrapper>
             <GridContainer>

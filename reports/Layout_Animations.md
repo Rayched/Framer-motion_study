@@ -456,3 +456,76 @@ function FinalExam(){
 - 아마 `Box 1, 4`가 동일한 `layoutId` 가졌기 때문에 발생한 문제 같다.
 
 ---
+#### `Box 1, 4` 확대 기능 구현하기 2 
+
+- **`layoutId 중복 issue 해결 과정`**
+
+- 결국은 `1, 4번 <Box />`의 `layoutId`가 중복되는 것이 문제이니
+- 사용자가 클릭한 `<Box />`의 `id`를 `onClick Event` 통해 `state`에 저장
+- 해당 `state` 값을 `OverlayView - <Box />`의 `layoutId`로 전달한다.
+
+- 이를 통해서 `framer-motion`이 `<Box id="[box1 or box4]"/>`와 <br/>
+	`OverlayView - <Box layoutId={state == ["box1" or "box4"]}/>` <br/>
+	두 Component를 동일한 것으로 인식, 애니메이션 적용한다.
+
+``` tsx
+function FinalExam(){
+	/*기존 코드*/
+	const [BoxId, setBoxId] = useState("");
+	
+	const isBoxClicked = (event: React.MouseEvent) => {
+		const {
+			currentTarget: {id}
+		} = event;
+		setBoxId(id);
+		//Click한 <Box />의 id를 받아와서 state 저장
+	}
+	
+	return (
+		<Wrapper>
+			<GridContainer>
+				<Box id="box1" layoutId="box1" onClick={isBoxClicked}/>
+				<Box id="box2" onClick={isCircleMove}>
+					{!Move ? <Circle layoutId="circle"/> : null}
+				</Box>
+				<Box id="box3" onClick={isCircleMove}>
+					{Move ? <Circle layoutId="circle"/> : null}
+				</Box>
+				<Box id="box4" layoutId="box4" onClick={isBoxClicked}/>
+			</GridContainer>
+			{
+				BoxId ? (
+					<OverlayViews>
+						<Box 
+							layoutId={BoxId}
+							onClick={() => setBoxId("")} 
+							style={{width: 400, height: 250}}
+						/>
+					</OverlayViews>
+				) : null
+			}
+		</Wrapper>
+	);
+};
+
+```
+
+ <img src="refImgs/Layout/Final/exam_build2.gif"/>
+
+- `box1, box4`에 개별적인 `layoutId`를 주고
+- 클릭한 `<Box />`의 `id`를 `OverlayViews - <Box />`가 `layoutId` 참조한다.
+- `Render`, `Delete` 되는 과정에서 자동으로 애니메이션 효과가 추가
+- `<OverlayViews />`에서 원래 화면으로 돌아오는 과정에서 <br/>
+	`box1, box4`가 하나로 겹치던 문제도 해결됐다.
+
+- 이걸로 기본적인 것은 전부 완료됐다.
+- `framer-motion` 라이브러리를 학습하는데 대략 한달 정도가 걸린 것 같다.
+- 중간에 코드 챌린지나 이런 기간도 있긴 했지만 생각보단 시간이 오래 걸렸다.
+
+- 다음주는 React 강의 수강은 잠시 멈춰두고
+- Side Project인 `Daily Planner`에 좀 집중해야겠다.
+- **完**
+---
+
+
+

@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "ab3b88fa3bb46a2a",
+        "id": "3a04dc0a6576af8c",
         "type": "tabs",
         "children": [
           {
-            "id": "93fe0d2844eecff4",
+            "id": "368d185d4babacfc",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -163,32 +163,31 @@
       "templates:템플릿 삽입": false
     }
   },
-  "active": "93fe0d2844eecff4",
+  "active": "368d185d4babacfc",
   "lastOpenFiles": [
-    "refImgs/Layout/Final/exam_build2_layoutId_update.gif",
-    "refImgs/Layout/Final/exam_build2_layoutId_update.gif.crdownload",
+    "refImgs/Layout/Final/exam_build1.gif",
     "refImgs/Layout/Final/exam_build2-1.gif",
+    "refImgs/Layout/Final/exam_build2_layoutId_update.gif",
+    "Layout_Animations.md",
+    "refImgs/Layout/Final/exam_build2.gif",
+    "refImgs/Layout/Final/exam_build2.gif.crdownload",
+    "refImgs/Layout/Final/exam_build2_layoutId_update.gif.crdownload",
     "refImgs/Layout/Final/exam_build2-1.gif.crdownload",
     "refImgs/Layout/Final/non-absolute.png",
-    "refImgs/Layout/Final/exam_build1.gif",
     "refImgs/Layout/Final/exam_build1.gif.crdownload",
     "refImgs/Layout/Final/FinalProject_sample.png",
     "refImgs/Layout/Final/FinalProject_sample.gif",
     "refImgs/Layout/Final/FinalProject_sample.gif.crdownload",
     "refImgs/Layout/Final",
     "Final_Project.md",
-    "Layout_Animations.md",
     "refImgs/Layout/layout_exam2_after.gif",
     "refImgs/Layout/layout_exam2_after.gif.crdownload",
     "refImgs/Layout/layout_exam2_before.gif",
     "refImgs/Layout/layout_exam2_before.gif.crdownload",
     "refImgs/Layout/layout_exam1.gif",
     "refImgs/Layout/layout_exam1.gif.crdownload",
-    "refImgs/Layout/layout_sample.gif",
     "refImgs/Layout/layout_sample.gif.crdownload",
-    "refImgs/Layout",
     "Slider.md",
-    "refImgs/Slider/Slider_ver3.gif",
     "Gestures.md",
     "AnimatePresence.md",
     "framer-motion_basic.md",
