@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { motion, Reorder, useMotionValue } from "framer-motion";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
@@ -37,17 +38,38 @@ const DragItems = styled(motion.div)`
         font-size: 1.2em;
         font-weight: bold;
     };
+    &:hover {
+        background-color: rgb(215, 220, 217);
+    }
 `;
 
+const DragItem_Variants = {
+    transition: {
+        duration: 1.5
+    }
+};
+
 function DnDExam(){
+    const [items, setItems] = useState([1, 2, 3, 4, 5]);
+
+    useEffect(() => console.log(items));
+
     return (
         <Wrapper>
             <Box>
-                <DragItems><span>Item 01</span></DragItems>
-                <DragItems><span>Item 02</span></DragItems>
-                <DragItems><span>Item 03</span></DragItems>
-                <DragItems><span>Item 04</span></DragItems>
-                <DragItems><span>Item 05</span></DragItems>
+                <Reorder.Group axis="y" values={items} onReorder={setItems}>
+                    {
+                        items.map((item) => {
+                            return (
+                                <Reorder.Item key={item} value={item}>
+                                    <DragItems key={item} variants={DragItem_Variants}>
+                                        <span>{"Item 0" + item}</span>
+                                    </DragItems>
+                                </Reorder.Item>
+                            );
+                        })
+                    }
+                </Reorder.Group>
             </Box>
         </Wrapper>
     );

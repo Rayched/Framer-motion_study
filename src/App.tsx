@@ -3,6 +3,13 @@ import { createGlobalStyle } from 'styled-components';
 import HiddenExam from './exams/HiddenExam';
 import Reportings from './Reportings';
 import DnDExam from './exams/Framer-motion_exams/DnDExam';
+import { Gestures } from './exams/Framer-motion_exams/Gestures';
+import LayoutExam from './exams/Framer-motion_exams/LayoutExam';
+import FinalExam from './exams/Framer-motion_exams/FinalExam';
+import { AnimatePresence } from 'framer-motion';
+import PresenceExam from './exams/Framer-motion_exams/AnimatePresence';
+import MotionValues from './exams/Framer-motion_exams/MotionValues';
+import DnDExam_old from './exams/Framer-motion_exams/DnDExam_old';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -59,7 +66,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <DnDExam />
+      <DnDExam_old />
     </div>
   );
 };
