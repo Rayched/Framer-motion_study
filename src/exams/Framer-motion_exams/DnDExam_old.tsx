@@ -2,11 +2,6 @@ import { motion } from "framer-motion";
 import { useRef, useState } from "react";
 import styled from "styled-components";
 
-interface I_dragItem {
-    targetNm: string;
-    targetIdx: number;
-}
-
 //Framer-motion의 <Reorder /> 사용하지 않고, Drag and Drop 구현
 const Wrapper = styled.div`
     display: flex;
@@ -49,6 +44,15 @@ const DragItems = styled(motion.div)`
     }
 `;
 
+const DragVariants = {
+    animate: {},
+    transition: {
+        delay: 1.0,
+        duration: 1.0
+    }
+};
+
+
 function DnDExam_old(){
     const [Items, setItems] = useState([1, 2, 3, 4, 5]);
     const dragItem = useRef(); 
@@ -72,7 +76,7 @@ function DnDExam_old(){
         console.log(idx);
     };
 
-    const ItemDrop = (e: any) => {
+    const ItemDrop = () => {
         const newList = [...Items];
         //기존 Items의 사본 생성, 저장
         const dragItemValue = newList[Number(dragItem.current)];
@@ -106,6 +110,7 @@ function DnDExam_old(){
                                 onDragEnter={() => DragEnter(idx)}
                                 onDragEnd={ItemDrop}
                                 onDragOver={(e) => e.preventDefault()}
+                                variants={DragVariants}
                             >
                                 <span>{"Item 0" + item}</span>
                             </DragItems>

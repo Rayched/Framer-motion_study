@@ -43,12 +43,6 @@ const DragItems = styled(motion.div)`
     }
 `;
 
-const DragItem_Variants = {
-    transition: {
-        duration: 1.5
-    }
-};
-
 function DnDExam(){
     const [items, setItems] = useState([1, 2, 3, 4, 5]);
 
@@ -61,8 +55,8 @@ function DnDExam(){
                     {
                         items.map((item) => {
                             return (
-                                <Reorder.Item key={item} value={item}>
-                                    <DragItems key={item} variants={DragItem_Variants}>
+                                <Reorder.Item key={`item${item}`} value={item}>
+                                    <DragItems key={item}>
                                         <span>{"Item 0" + item}</span>
                                     </DragItems>
                                 </Reorder.Item>
