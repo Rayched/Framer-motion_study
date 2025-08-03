@@ -1,6 +1,7 @@
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
-import MenuExam from './exams/Personal_Study/MenuExam';
+import MenuExam from './exams/Personal_Study/Menu_animation/MenuExam';
+import MenuExamV2 from './exams/Personal_Study/Menu_animation/MenuExamv2';
 
 const GlobalStyle = createGlobalStyle`
   /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -57,7 +58,7 @@ function App() {
   return (
     <div>
       <GlobalStyle />
-      <MenuExam />
+      <MenuExamV2 />
     </div>
   );
 };
